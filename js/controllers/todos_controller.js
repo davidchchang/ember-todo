@@ -31,7 +31,16 @@ Todos.TodosController = Ember.ArrayController.extend({
   },
 
   allAreDone: function(key, value) {
-    return !!this.get('length') && this.isEvery('isCompleted');
+    if (value === undefined) {
+      return !!this.get('length') && this.isEvery('isCompleted', true);
+    } else {
+      // FOLLOWUP
+      // Step: http://emberjs.com/guides/getting-started/toggle-all-todos/
+      // How does the checkbox know to pass the value of true/false to isCompleted?
+      this.setEach('isCompleted', value);
+      this.invoke('save');
+      return value;
+    }
   }.property('@each.isCompleted'),
 
   hasCompleted: function() {
