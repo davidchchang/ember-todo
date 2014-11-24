@@ -1,9 +1,11 @@
-Todos.Todo = DS.Model.extend({
+import DS from 'ember-data';
+
+var Todo = DS.Model.extend({
   title: DS.attr('string'),
   isCompleted: DS.attr('boolean')
 });
 
-Todos.Todo.FIXTURES = [
+Todo.FIXTURES = [
   {
     id: 1,
     title: 'Learn Ember.js',
@@ -20,3 +22,5 @@ Todos.Todo.FIXTURES = [
     isCompleted: false
   }
 ];
+
+export default Todo;

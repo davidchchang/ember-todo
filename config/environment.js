@@ -2,6 +2,12 @@
 
 module.exports = function(environment) {
   var ENV = {
+    contentSecurityPolicy: {
+      // allow everything but only from the same origin
+      // can change in the future
+      // http://content-security-policy.com/
+      'default-src': "'self'"
+    },
     modulePrefix: 'todo-app',
     environment: environment,
     baseURL: '/',

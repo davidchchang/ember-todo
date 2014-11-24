@@ -31879,7 +31879,7 @@ define("route-recognizer",
 
 (function() {
 define("router",
-  ["route-recognizer","rsvp","exports"],
+  ["route-recognizer","../../.","exports"],
   function(__dependency1__, __dependency2__, __exports__) {
     "use strict";
     /**

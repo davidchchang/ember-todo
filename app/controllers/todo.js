@@ -1,4 +1,6 @@
-Todos.TodoController = Ember.ObjectController.extend({
+import Ember from 'ember';
+
+export default Ember.ObjectController.extend({
   actions: {
     editTodo: function () {
       this.set('isEditing', true);
